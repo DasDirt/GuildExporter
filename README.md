@@ -3,11 +3,11 @@ GuildExporter can be used to export a Discord guild as .json file and to import 
 
 At the moment channels, roles, categories & permissions are saved.
 
-[The bot in action] (https://youtu.be/MMdTRbKCkCk)
+[The bot in action](https://youtu.be/MMdTRbKCkCk)
 
 ## Usage
 GuildExporter is written in Java 8
-1. Create an Application on [Discords Developer Portal] (https://discord.com/developers/applications)
+1. Create an Application on [Discords Developer Portal](https://discord.com/developers/applications)
 2. Go to the Bot tab and click on Add Bot.
 3. Click on the Copy button under the token section to copy your bot token
 4. Start terminal in the same folder of the downloaded Jar file and type `java -jar GuildExporter -t TOKEN -id ID,ID` also don't forget replace TOKEN with your bot token and ID,ID with the discord ids that should be whitelisted for the commands
