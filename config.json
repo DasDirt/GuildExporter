@@ -1,0 +1,182 @@
+{
+  "name": "TestServer",
+  "roles": [
+    {
+      "name": "LikeABoss",
+      "position": 6,
+      "id": 925480105214611537,
+      "hoisted": false,
+      "mentionable": false,
+      "publicRole": false,
+      "permissions": 1090921168895,
+      "color": 3092790
+    },
+    {
+      "name": "Owner",
+      "position": 5,
+      "id": 925480105818611733,
+      "hoisted": true,
+      "mentionable": false,
+      "publicRole": false,
+      "permissions": 1090921168895,
+      "color": 5296895
+    },
+    {
+      "name": "Admin",
+      "position": 4,
+      "id": 925480107047526410,
+      "hoisted": true,
+      "mentionable": false,
+      "publicRole": false,
+      "permissions": 1090921168863,
+      "color": 16711680
+    },
+    {
+      "name": "Moderator",
+      "position": 3,
+      "id": 925480107781521411,
+      "hoisted": true,
+      "mentionable": true,
+      "publicRole": false,
+      "permissions": 1071862251459,
+      "color": 4328055
+    },
+    {
+      "name": "MasterOf13FPS",
+      "position": 2,
+      "id": 925480108712656957,
+      "hoisted": true,
+      "mentionable": false,
+      "publicRole": false,
+      "permissions": 1071698485057,
+      "color": 786885
+    },
+    {
+      "name": "Premium",
+      "position": 1,
+      "id": 925480109295689851,
+      "hoisted": true,
+      "mentionable": false,
+      "publicRole": false,
+      "permissions": 1071698533953,
+      "color": 16766720
+    },
+    {
+      "name": "Developer",
+      "position": 0,
+      "id": 925480111480897686,
+      "hoisted": true,
+      "mentionable": false,
+      "publicRole": false,
+      "permissions": 1071698480705,
+      "color": 1878116
+    },
+    {
+      "name": "@everyone",
+      "position": -1,
+      "id": 925113838251167825,
+      "hoisted": false,
+      "mentionable": false,
+      "publicRole": true,
+      "permissions": 1071698660929,
+      "color": 536870911
+    }
+  ],
+  "categories": [
+    {
+      "name": "team",
+      "position": 0,
+      "id": 925480113070555197,
+      "permissions": [
+        {
+          "allow": 0,
+          "deny": 1049600,
+          "holderID": 925113838251167825,
+          "isHolderRole": true
+        }
+      ],
+      "channels": [
+        {
+          "name": "chat",
+          "position": 0,
+          "id": 925480115763314718,
+          "sync": false,
+          "permissions": [
+            {
+              "allow": 0,
+              "deny": 1024,
+              "holderID": 925113838251167825,
+              "isHolderRole": true
+            }
+          ],
+          "channelType": "TEXT"
+        },
+        {
+          "name": "talk",
+          "position": 0,
+          "id": 925480116803497984,
+          "sync": true,
+          "permissions": [
+            {
+              "allow": 0,
+              "deny": 1049600,
+              "holderID": 925113838251167825,
+              "isHolderRole": true
+            }
+          ],
+          "channelType": "VOICE"
+        },
+        {
+          "name": "support",
+          "position": 1,
+          "id": 925480117503926274,
+          "sync": true,
+          "permissions": [
+            {
+              "allow": 0,
+              "deny": 1049600,
+              "holderID": 925113838251167825,
+              "isHolderRole": true
+            }
+          ],
+          "channelType": "VOICE"
+        }
+      ]
+    },
+    {
+      "name": "Textkanäle",
+      "position": 1,
+      "id": 925480113884254228,
+      "permissions": [],
+      "channels": [
+        {
+          "name": "welcome",
+          "position": 1,
+          "id": 925480119550767155,
+          "sync": true,
+          "permissions": [],
+          "channelType": "TEXT"
+        }
+      ]
+    }
+  ],
+  "channels": [
+    {
+      "name": "ohnecat",
+      "position": 2,
+      "id": 925480114572124170,
+      "sync": true,
+      "permissions": [
+        {
+          "allow": 0,
+          "deny": 1040,
+          "holderID": 925113838251167825,
+          "isHolderRole": true
+        }
+      ],
+      "channelType": "TEXT"
+    }
+  ],
+  "verificationLevel": 0,
+  "explicitContentLevel": 0
+}
