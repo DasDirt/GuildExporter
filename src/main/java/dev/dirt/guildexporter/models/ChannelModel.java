@@ -52,7 +52,8 @@ public class ChannelModel {
             for (PermissionModel permission : channel.getPermissions()) {
                 channelAction = PermissionModel.fromJson(permission, channelAction);
             }
-            channelAction.queue();
+            GuildChannel channel1 = channelAction.complete();
+            Remapper.addMapping(channel.getId(), channel1.getIdLong());
         }
     }
 

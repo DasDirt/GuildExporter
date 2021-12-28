@@ -1,7 +1,7 @@
 # GuildExporter
 GuildExporter can be used to export a Discord guild as .json file and to import recreate a Discord guild from a previous generated .json file
 
-At the moment channels, roles, categories & permissions are saved.
+At the moment channels, roles, categories, permissions, system channel, afk channel & afk timeout are saved.
 
 [The bot in action](https://youtu.be/MMdTRbKCkCk)
 

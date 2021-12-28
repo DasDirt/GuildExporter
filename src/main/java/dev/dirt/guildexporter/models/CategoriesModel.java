@@ -39,10 +39,9 @@ public class CategoriesModel {
         for (PermissionModel permission : categoriesModel.getPermissions()) {
             categoryChannelAction = PermissionModel.fromJson(permission, categoryChannelAction);
         }
-        categoryChannelAction.queue((category)-> {
-            for (ChannelModel channel : categoriesModel.getChannels()) {
-                ChannelModel.fromJson(channel, guild, category);
-            }
-        });
+        Category category = categoryChannelAction.complete();
+        for (ChannelModel channel : categoriesModel.getChannels()) {
+            ChannelModel.fromJson(channel, guild, category);
+        }
     }
 }

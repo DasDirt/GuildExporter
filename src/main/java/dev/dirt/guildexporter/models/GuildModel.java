@@ -2,6 +2,7 @@ package dev.dirt.guildexporter.models;
 
 import com.google.gson.GsonBuilder;
 import dev.dirt.guildexporter.GuildExporter;
+import dev.dirt.guildexporter.Remapper;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import net.dv8tion.jda.api.entities.Category;
@@ -22,6 +23,7 @@ public class GuildModel {
     private final List<ChannelModel> channels;
     private ChannelModel systemMessagesChannel;
     private ChannelModel afkChannel;
+    private int afkTimeOut;
     private int verificationLevel;
     private int explicitContentLevel;
 
@@ -30,7 +32,7 @@ public class GuildModel {
         // todo guild icon
         ChannelModel systemMessagesChannel = ChannelModel.toModel(guild.getSystemChannel());
         ChannelModel afkChannel = ChannelModel.toModel(guild.getAfkChannel());
-        GuildModel guildModel = new GuildModel(guild.getName(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), systemMessagesChannel, afkChannel, guild.getVerificationLevel().getKey(), guild.getExplicitContentLevel().getKey());
+        GuildModel guildModel = new GuildModel(guild.getName(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), systemMessagesChannel, afkChannel, guild.getAfkTimeout().getSeconds(), guild.getVerificationLevel().getKey(), guild.getExplicitContentLevel().getKey());
 
         for (Category category : guild.getCategories()) {
             guildModel.getCategories().add(CategoriesModel.toModel(category));
@@ -70,7 +72,15 @@ public class GuildModel {
             ChannelModel.fromJson(channel, guild, null);
         }
 
+        if (guildModel.getSystemMessagesChannel() != null) {
+            guild.getManager().setSystemChannel(guild.getTextChannelById(Remapper.getMappingFromOldID(guildModel.getSystemMessagesChannel().getId()).getNewID())).queue();
+        }
+
+        if (guildModel.getAfkChannel() != null) {
+            guild.getManager().setAfkTimeout(Guild.Timeout.fromKey(guildModel.getAfkTimeOut())).setAfkChannel(guild.getVoiceChannelById(Remapper.getMappingFromOldID(guildModel.getAfkChannel().getId()).getNewID())).queue();
+        }
+
         // set everything else
-        guild.getManager().setName(guildModel.getName()).queue();
+        guild.getManager().setName(guildModel.getName()).setExplicitContentLevel(Guild.ExplicitContentLevel.fromKey(guildModel.getExplicitContentLevel())).setVerificationLevel(Guild.VerificationLevel.fromKey(guildModel.getVerificationLevel())).queue();
     }
 }

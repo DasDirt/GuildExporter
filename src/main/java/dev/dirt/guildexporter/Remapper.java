@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-// Currently used only for roles
+// Currently used only for roles & channels
 public class Remapper {
     private static final List<Mapping> mappings = new ArrayList<>();
 
